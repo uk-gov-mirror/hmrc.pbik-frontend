@@ -96,9 +96,10 @@ sidebar.link.a-z = Expenses and benefits: A to Z guide
 # Add benefits
 #*************************************************************
 whatNext.remove.link.P11D=ffurflen P11D
-AddBenefits.Heading = Dewis buddiannau a threuliau
-AddBenefits.table.heading.input = Buddiant neu draul
-AddBenefits.table.heading.section = Adran P11D
+AddBenefits.current.heading = 6 Ebrill [year] i 5 Ebrill [year]
+AddBenefits.Heading = Pa fudd-daliadau neu dreuliau y byddwch yn eu trethu drwy’ch cyflogres?
+AddBenefits.table.heading.input = Dewiswch bob un sy’n gymwys
+AddBenefits.table.heading.section =
 
 AddBenefits.CY.Caution.Title = PWYSIG – Darllenwch yr wybodaeth isod
 AddBenefits.CY.Caution.p1 = RHYBUDD – Rydych ar fin cofrestru buddiannau neu dreuliau ar gyfer y flwyddyn dreth bresennol (a ddechreuodd ar 6 Ebrill {0} )
@@ -116,7 +117,7 @@ AddBenefits.CY.Caution.p12.1 = Os ydych yn newydd i’r broses talu drwy’r gyf
 AddBenefits.CY.Caution.p12.2 = flwyddyn dreth nesaf
 AddBenefits.CY.Caution.p12.3 = (sy’n dechrau ar 6 Ebrill {0})
 
-AddBenefits.ChooseBenefitsLabel.1 = Dewiswch ba fuddiannau a threuliau y byddwch yn eu trethu drwy eich cyflogres o 6 Ebrill {0} ymlaen.
+AddBenefits.ChooseBenefitsLabel.1 =
 AddBenefits.ChooseBenefitsLabel.1.CY = Dewiswch ba fuddiannau a threuliau yr ydych wedi bod yn eu trethu drwy eich cyflogres er 6 Ebrill {0}.
 AddBenefits.noselection.error = Mae’n rhaid i chi ddewis o leiaf 1 buddiant neu draul cyn i chi allu mynd yn eich blaen
 
@@ -198,108 +199,108 @@ ExclusionRescind.WhatNext.p4 = Dylech barhau i gyflwyno <a target = "_blank" hre
 BenefitInKind.label.40 = Asedion sydd wedi’u trosglwyddo (ceir, eiddo, nwyddau neu asedion eraill)
 BenefitInKind.desc.40 = Asedion, er enghraifft, car sy’n eiddo i’r cwmni a roddwyd yn rhad ac am ddim i’r cyflogai, neu’n is na’i werth ar y farchnad.
 BenefitInKind.url.40 = <a target = "_blank" href = "https://www.gov.uk/paying-your-employees-expenses-and-benefits-through-your-payroll#assets-transferred">rhagor</a> (Yn agor ffenestr newydd)
-BenefitInKind.p11d.40.ref = Adran A
+BenefitInKind.p11d.40.ref =
 
 BenefitInKind.label.48 = Taliadau a wnaed ar ran cyflogai
 BenefitInKind.desc.48 = Taliadau yr ydych wedi’u gwneud ar gyfer eich cyflogai.
 BenefitInKind.url.48 = <a target = "_blank" href = "https://www.gov.uk/paying-your-employees-expenses-and-benefits-through-your-payroll#payments">rhagor</a> (Yn agor ffenestr newydd)
-BenefitInKind.p11d.48.ref = Adran B
+BenefitInKind.p11d.48.ref =
 
 BenefitInKind.label.54 = Talebau a chardiau credyd
 BenefitInKind.desc.54 = Gwerth y talebau y mae cyflogwr yn eu rhoi i’w cyflogeion, ac y gellir eu cyfnewid am arian parod, nwyddau neu wasanaethau.
 BenefitInKind.url.54 = <a target = "_blank" href = "https://www.gov.uk/paying-your-employees-expenses-and-benefits-through-your-payroll#vouchers">rhagor</a> (Yn agor ffenestr newydd)
-BenefitInKind.p11d.54.ref = Adran C
+BenefitInKind.p11d.54.ref =
 
 BenefitInKind.label.38 = Llety
 BenefitInKind.desc.38 = Cost llety ar gyfer cyflogai neu ei deulu a dalwyd gan y cyflogwr. Os talwyd am filiau neu gostau dodrefn hefyd, dylent fod yn rhan o’r buddiant "Eitemau eraill (yn cynnwys tanysgrifiadau a ffioedd proffesiynol)".
 BenefitInKind.url.38 = <a target = "_blank" href = "https://www.gov.uk/paying-your-employees-expenses-and-benefits-through-your-payroll#accommodation">rhagor</a> (Yn agor ffenestr newydd)
-BenefitInKind.p11d.38.ref = Adran D
+BenefitInKind.p11d.38.ref =
 
 BenefitInKind.label.44 = Lwfans milltiroedd a thaliadau teithwyr
 BenefitInKind.desc.44 = Dyma swm y lwfansau car a milltiroedd a delir i gyflogai am deithio yng ngherbyd ei hun at ddibenion busnes, a thaliadau teithwyr, sy’n fwy na’r symiau cymeradwy uchaf. (Gweler y <a target = "_blank" href = "https://www.gov.uk/government/publications/paye-end-of-year-expenses-and-benefits-p11d-guide.cy">Canllaw P11D</a> ar gyfer y cyfraddau eithrio).
 BenefitInKind.url.44 = <a target = "_blank" href = "https://www.gov.uk/paying-your-employees-expenses-and-benefits-through-your-payroll#mileage">rhagor</a> (Yn agor ffenestr newydd)
-BenefitInKind.p11d.44.ref = Adran E
+BenefitInKind.p11d.44.ref =
 
 BenefitInKind.label.31 = Car a thanwydd car
 BenefitInKind.desc.31 = Os bydd cyflogai yn defnyddio car sy’n eiddo i’r cwmni ar gyfer teithiau preifat neu ar gyfer cymudo, yna mae’n rhaid talu treth ar bris sylfaenol y cerbyd a’r tanwydd a ddefnyddir ar gyfer teithiau nad ydynt yn ymwneud â’r gwaith.
 BenefitInKind.url.31 = <a href = "https://www.gov.uk/expenses-and-benefits-company-cars" target = "_blank">Arweiniad ar geir a thanwydd car</a> (Yn agor ffenestr newydd)
-BenefitInKind.p11d.31.ref = Adran F
+BenefitInKind.p11d.31.ref =
 
 BenefitInKind.label.29 = Tanwydd ceir
 BenefitInKind.desc.29 = Dyma’r tanwydd a gyflenwir gan y cyflogwr ar gyfer teithiau preifat (yn cynnwys teithio o’r cartref i’r gwaith).
 BenefitInKind.url.29 = <a target = "_blank" href = "https://www.gov.uk/paying-your-employees-expenses-and-benefits-through-your-payroll#car-fuel">rhagor</a> (Yn agor ffenestr newydd)
-BenefitInKind.p11d.29.ref = Adran F
+BenefitInKind.p11d.29.ref =
 
 BenefitInKind.label.35 = Faniau
 BenefitInKind.desc.35 = Costau faniau a ddefnyddir gan gyflogeion at ddibenion preifat.
 BenefitInKind.url.35 = <a target = "_blank" href = "https://www.gov.uk/paying-your-employees-expenses-and-benefits-through-your-payroll#vans">rhagor</a> (Yn agor ffenestr newydd)
-BenefitInKind.p11d.35.ref = Adran G
+BenefitInKind.p11d.35.ref =
 
 BenefitInKind.label.36 = Tanwydd faniau
 BenefitInKind.desc.36 = Tanwydd a gyflenwir ar gyfer faniau cwmni.
 BenefitInKind.url.36 = <a target = "_blank" href = "https://www.gov.uk/paying-your-employees-expenses-and-benefits-through-your-payroll#van-fuel">rhagor</a> (Yn agor ffenestr newydd)
-BenefitInKind.p11d.36.ref = Adran G
+BenefitInKind.p11d.36.ref =
 
 BenefitInKind.label.37 = Benthyciadau di-log a llog isel
 BenefitInKind.desc.37 = Benthyciadau a roddir i gyflogai, naill ai’n ddi-log neu’n is na’r gyfradd swyddogol ar gyfer llog.
 BenefitInKind.url.37 = <a target = "_blank" href = "https://www.gov.uk/paying-your-employees-expenses-and-benefits-through-your-payroll#loans">rhagor</a> (Yn agor ffenestr newydd)
-BenefitInKind.p11d.37.ref = Adran H
+BenefitInKind.p11d.37.ref =
 
 BenefitInKind.label.30 = Triniaeth feddygol neu yswiriant preifat
 BenefitInKind.desc.30 = Costau triniaeth feddygol a deintyddol preifat a phremiymau yswiriant meddygol preifat.
 BenefitInKind.url.30 = <a target = "_blank" href = "https://www.gov.uk/expenses-and-benefits-medical-treatment">Arweiniad ar driniaeth feddygol breifat</a> (Yn agor ffenestr newydd)
-BenefitInKind.p11d.30.ref = Adran I
+BenefitInKind.p11d.30.ref =
 
 BenefitInKind.label.50 = Treuliau, taliadau a buddiannau adleoli sy’n gymwys
 BenefitInKind.desc.50 = Treuliau adleoli sy’n fwy na £8,000.
 BenefitInKind.url.50 = <a target = "_blank" href = "https://www.gov.uk/paying-your-employees-expenses-and-benefits-through-your-payroll#qualifying-expenses">rhagor</a> (Yn agor ffenestr newydd)
-BenefitInKind.p11d.50.ref = Adran J
+BenefitInKind.p11d.50.ref =
 
 BenefitInKind.label.8 = Gwasanaethau a gyflenwir
 BenefitInKind.desc.8 = Costau gwasanaethau a gyflenwir i chi.
 BenefitInKind.url.8 = <a target = "_blank" href = "https://www.gov.uk/paying-your-employees-expenses-and-benefits-through-your-payroll#services">rhagor</a> (Yn agor ffenestr newydd)
-BenefitInKind.p11d.8.ref = Adran K
+BenefitInKind.p11d.8.ref =
 
 BenefitInKind.label.39 = Asedion at wasanaeth y cyflogai
 BenefitInKind.desc.39 = Asedion y cwmni, er enghraiffft, cwch hwylio a ddefnyddir gan gyflogai at ddibenion preifat.
 BenefitInKind.url.39 = <a target = "_blank" href = "https://www.gov.uk/paying-your-employees-expenses-and-benefits-through-your-payroll#assets-placed">rhagor</a> (Yn agor ffenestr newydd)
-BenefitInKind.p11d.39.ref = Adran L
+BenefitInKind.p11d.39.ref =
 
 BenefitInKind.label.47 = Eitemau eraill (yn cynnwys tanysgrifiadau a ffïoedd proffesiynol)
 BenefitInKind.desc.47 = Adran M ffurflen P11D – tanysgrifiadau a ffïoedd proffesiynol, cymorth addysgol, treuliau, gofal plant, buddiannau adleoli a thaliadau treuliau nad ydynt yn gymwys, buddiannau eraill.
 BenefitInKind.url.47 = <a target = "_blank" href = "https://www.gov.uk/expenses-benefits-subscriptions-professional-fees">Arweiniad ar eitemau eraill</a> (Yn agor ffenestr newydd)
-BenefitInKind.p11d.47.ref = Adran M
+BenefitInKind.p11d.47.ref =
 BenefitInKind.hint.47 = Mae’n rhaid i chi dalu, drwy’r gyflogres, yr holl eitemau yr ydych yn rhoi gwybod amdanynt yn yr adran hon, neu dim ohonynt, heblaw am dreth incwm sydd wedi’i thalu ond na chafodd ei didynnu o gydnabyddiaeth cyfarwyddwr, sy’n fuddiant ar ei ben ei hun.
 
 BenefitInKind.label.52 = Treth Incwm a dalwyd ond na chafodd ei didynnu o gydnabyddiaeth cyfarwyddwr
 BenefitInKind.desc.52 = Os ydych yn talu cyfarwyddwr cwmni heb ddidynnu treth o dan TWE, ac mae CThEM yn adennill y dreth sydd heb ei thalu oddi wrthych, mae hyn yn cyfrif fel buddiant.
 BenefitInKind.url.52 = <a target = "_blank" href = "https://www.gov.uk/paying-your-employees-expenses-and-benefits-through-your-payroll#income-tax">rhagor</a> (Yn agor ffenestr newydd)
-BenefitInKind.p11d.52.ref = Adran M
+BenefitInKind.p11d.52.ref =
 
 BenefitInKind.label.53 = Taliadau teithio a chynhaliaeth
 BenefitInKind.desc.53 = Costau tocynnau, gwestai a phrydau wrth deithio ar fusnes.
 BenefitInKind.url.53 = <a target = "_blank" href = "https://www.gov.uk/paying-your-employees-expenses-and-benefits-through-your-payroll#travelling">rhagor</a> (Yn agor ffenestr newydd)
-BenefitInKind.p11d.53.ref = Adran N
+BenefitInKind.p11d.53.ref =
 
 BenefitInKind.label.42 = Gwesteia
 BenefitInKind.desc.42 = Dyma’r taliadau a wneir ar gyfer gwesteia, gan gynnwys lwfansau symiau crwn, symiau a ad-dalwyd neu a dalwyd i drydydd parti, a lwfansau penodol ar gyfer gwesteia.
 BenefitInKind.url.42 = <a target = "_blank" href = "https://www.gov.uk/paying-your-employees-expenses-and-benefits-through-your-payroll#entertainment">rhagor</a> (Yn agor ffenestr newydd)
-BenefitInKind.p11d.42.ref = Adran N
+BenefitInKind.p11d.42.ref =
 
 BenefitInKind.label.43 = Lwfans treuliau cyffredinol ar gyfer teithio at ddibenion busnes
 BenefitInKind.desc.43 = Lwfansau symiau crwn a roddir i gyflogai nad yw’n ymwneud yn unig â gwesteia.
 BenefitInKind.url.43 = <a target = "_blank" href = "https://www.gov.uk/paying-your-employees-expenses-and-benefits-through-your-payroll#entertainment">rhagor</a> (Yn agor ffenestr newydd)
-BenefitInKind.p11d.43.ref = Adran N
+BenefitInKind.p11d.43.ref =
 
 BenefitInKind.label.32 = Taliadau ar gyfer defnyddio ffôn y cartref
 BenefitInKind.desc.32 = Costau defnyddio ffôn cartref y cyflogai.
 BenefitInKind.url.32 = <a target = "_blank" href = "https://www.gov.uk/paying-your-employees-expenses-and-benefits-through-your-payroll#telephone">rhagor</a> (Yn agor ffenestr newydd)
-BenefitInKind.p11d.32.ref = Adran N
+BenefitInKind.p11d.32.ref =
 
 BenefitInKind.label.45 = Treuliau adleoli nad ydynt yn gymwys
 BenefitInKind.desc.45 = Costau adleoli yr ydych wedi’u talu ar ran eich cyflogai.
 BenefitInKind.url.45 = <a target = "_blank" href = "https://www.gov.uk/paying-your-employees-expenses-and-benefits-through-your-payroll#non-qualifying">rhagor</a> (Yn agor ffenestr newydd)
-BenefitInKind.p11d.45.ref = Adran N
+BenefitInKind.p11d.45.ref =
 
 BenefitInKind.label.unavailable = Nid yw’r buddiant hwn ar gael i’w gofrestru ar-lein ar hyn o bryd.
 BenefitInKind.label.unavailable.desc = Ar gyfer buddiannau nad ydynt ar gael ar hyn o bryd i’w cofrestru ar-lein, defnyddiwch <a rel = "external" href = "https://www.gov.uk/government/publications/paye-end-of-year-expenses-and-benefits-p11d.cy">ffurflen P11D i roi gwybod amdanynt yn lle hynny</a> (yn agor mewn ffenestr newydd).

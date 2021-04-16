@@ -48,7 +48,7 @@ repeatWithIndex: RepeatWithIndex)
 </div>
 }
 
-@title = @{if(additive) {messages("AddBenefits.Heading", ""+taxYearRange.cy, ""+taxYearRange.cyplus1) + " - " + messages("Service.title")} else {messages("RemoveBenefits.Heading", ""+taxYearRange.cy, ""+taxYearRange.cyplus1) + " - " + messages("Service.title")}}
+@title = @{if(additive) {messages("AddBenefits.current.heading","AddBenefits.Heading", ""+taxYearRange.cy, ""+taxYearRange.cyplus1) + " - " + messages("Service.title")} else {messages("RemoveBenefits.Heading", ""+taxYearRange.cy, ""+taxYearRange.cyplus1) + " - " + messages("Service.title")}}
 
 @parentTemplate(pageTitle = title, Some(taxYearRange), Some(empRef.toString), sidebarLinks = Some(sidebarLinks)) {
 
@@ -59,7 +59,7 @@ repeatWithIndex: RepeatWithIndex)
 
             <div class="error-summary" role="alert" aria-labelledby="error-summary-heading" tabindex="-1">
 
-                <h2 class="heading-medium error-summary-heading" id="error-summary-heading">@messages("Service.errorSummary.heading")</h2>
+                <h1 class="heading-medium error-summary-heading" id="error-summary-heading">@messages("Service.errorSummary.heading")</h1>
 
                 <ul class="error-summary-list">
                     <li><a href="#error-list-no-selection" class="error-message">@messages("AddBenefits.noselection.error")</a></li>
@@ -83,16 +83,9 @@ repeatWithIndex: RepeatWithIndex)
                             @messages("AddBenefits.noselection.error")
                         </span>
                     }
-                    <h2>@Html(messages("AddBenefits.ChooseBenefitsLabel.1", ""+taxYearRange.cy, ""+taxYearRange.cyplus1))</h2>
+                    <h2>@Html(messages("AddBenefits.current.heading", ""+taxYearRange.cy, ""+taxYearRange.cyplus1)+ "")</h2>
                     <ol class="govuk-check-your-answers cya-questions-short">
-                        <li>
-                            <div class="cya-question benefitOrExpense">
-                                @messages("AddBenefits.table.heading.input")
-                            </div>
-                            <div class="cya-question p11dSection">
-                                @messages("AddBenefits.table.heading.section")
-                            </div>
-                        </li>
+                        <p>@messages("AddBenefits.table.heading.input")</p>
 
                         @if(bikForm("actives").indexes.exists(i=> prioritisedBiks.contains(bikForm("actives")("[" + i + "]")("uid").value.get))){
                             @repeatWithIndex(bikForm("actives"), min=0) { (activeField, index) =>
@@ -141,9 +134,6 @@ repeatWithIndex: RepeatWithIndex)
                                         </label>
                                     }
                                     </div>
-                                    <div class="cya-answer p11dSection" onclick=selectCheckBoxTable('checkbox-@activeField("uid").value.get')>
-                                        @messages("BenefitInKind.p11d." + activeField("uid").value.get + ".ref")
-                                    </div>
                                 </li>
                                 }
                             }
@@ -154,9 +144,11 @@ repeatWithIndex: RepeatWithIndex)
                                 @if(!prioritisedBiks.contains(activeField("uid").value.get)) {
                                 <li>
                                     <div class="cya-answer benefitOrExpense">
-                                        <input type="hidden" id='actives_@{index}_uid' name='actives[@index].uid' value='@activeField("uid").value.get'  />
                                         @if(previouslySelectedBenefits.filter(x => x.id == activeField("uid").value.get && x.active).length==1) {
+                                        <div class="multiple-choice">
+                                            <input type="hidden" id='actives_@{index}_uid' name='actives[@index].uid' value='@activeField("uid").value.get'  />
                                             <label id='label-@activeField("uid").value.get' class="selected" for='checkbox-@activeField("uid").value.get'>
+                                        </div>
                                                 <span class="checkbox-indent">
                                                 @if( nonLegislationBiks.contains(activeField("uid").value.get.toInt) | decommissionedBiks.contains(activeField("uid").value.get.toInt ) ) {
 
@@ -196,9 +188,6 @@ repeatWithIndex: RepeatWithIndex)
                                                 }
                                             </label>
                                         }
-                                    </div>
-                                    <div class="cya-answer p11dSection" onclick=selectCheckBoxTable('checkbox-@activeField("uid").value.get')>
-                                        @messages("BenefitInKind.p11d." + activeField("uid").value.get + ".ref")
                                     </div>
                                 </li>
                                 }

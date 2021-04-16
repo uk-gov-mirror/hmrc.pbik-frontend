@@ -100,10 +100,10 @@ whatNext.remove.link.P11D=P11D
 #*************************************************************
 # Add benefits
 #*************************************************************
-
-AddBenefits.Heading = Choose benefits and expenses
-AddBenefits.table.heading.input = Benefit or expense
-AddBenefits.table.heading.section = P11D section
+AddBenefits.current.heading = 6 April {0} to 5 April {1}
+AddBenefits.Heading = What benefits or expenses will you tax through your payroll?
+AddBenefits.table.heading.input = Select all that apply
+AddBenefits.table.heading.section =
 
 AddBenefits.CY.Caution.Title = IMPORTANT - read the information below
 AddBenefits.CY.Caution.p1 = CAUTION - you’re about to register benefits or expenses for the current tax year (started 6 April {0})
@@ -204,108 +204,108 @@ ExclusionRescind.WhatNext.p4 = Continue sending a <a target = "_blank" href = "h
 BenefitInKind.label.40 = Assets transferred (cars, property, goods or other assets)
 BenefitInKind.desc.40 = Any asset, for example, a car owned by the company that’s been given to the employee for free or below market value.
 BenefitInKind.url.40 = <a target = "_blank" href = "https://www.gov.uk/paying-your-employees-expenses-and-benefits-through-your-payroll#assets-transferred">more</a> (opens in new window)
-BenefitInKind.p11d.40.ref = Section A
+BenefitInKind.p11d.40.ref =
 
 BenefitInKind.label.48 = Payments made on behalf of employee
 BenefitInKind.desc.48 = Payments you’ve made for your employee.
 BenefitInKind.url.48 = <a target = "_blank" href = "https://www.gov.uk/paying-your-employees-expenses-and-benefits-through-your-payroll#payments">more</a> (opens in new window)
-BenefitInKind.p11d.48.ref = Section B
+BenefitInKind.p11d.48.ref =
 
 BenefitInKind.label.54 = Vouchers and credit cards
 BenefitInKind.desc.54 = The value of the vouchers that an employer gives to their employees that can be exchanged for money, goods or services.
 BenefitInKind.url.54 = <a target = "_blank" href = "https://www.gov.uk/paying-your-employees-expenses-and-benefits-through-your-payroll#vouchers">more</a> (opens in new window)
-BenefitInKind.p11d.54.ref = Section C
+BenefitInKind.p11d.54.ref =
 
 BenefitInKind.label.38 = Living accommodation
 BenefitInKind.desc.38 = The cost of living accommodation for an employee or their family paid for by the employer. If bills or furniture costs were also paid for they should be part of the ‘other items (including subscriptions and professional fees)’ benefit.
 BenefitInKind.url.38 = <a target = "_blank" href = "https://www.gov.uk/paying-your-employees-expenses-and-benefits-through-your-payroll#accommodation">more</a> (opens in new window)
-BenefitInKind.p11d.38.ref = Section D
+BenefitInKind.p11d.38.ref =
 
 BenefitInKind.label.44 = Mileage allowance and passenger payments
 BenefitInKind.desc.44 = This is the amount of car and mileage allowances paid to an employee for business travel in the employee’s own vehicle, and passenger payments, in excess of the maximum approved amounts. (see <a target = "_blank" href = "https://www.gov.uk/government/publications/paye-end-of-year-expenses-and-benefits-p11d-guide">P11D guide</a> for the exempt rates).
 BenefitInKind.url.44 = <a target = "_blank" href = "https://www.gov.uk/paying-your-employees-expenses-and-benefits-through-your-payroll#mileage">more</a> (opens in new window)
-BenefitInKind.p11d.44.ref = Section E
+BenefitInKind.p11d.44.ref =
 
 BenefitInKind.label.31 = Car and car fuel
 BenefitInKind.desc.31 = If an employee uses a company-owned car for private journeys or commuting, tax must be paid on both the list price of the vehicle and the fuel for non-work journeys.
 BenefitInKind.url.31 = <a href = "https://www.gov.uk/expenses-and-benefits-company-cars" target = "_blank">Car and car fuel guidance</a> (opens in new window)
-BenefitInKind.p11d.31.ref = Section F
+BenefitInKind.p11d.31.ref =
 
 BenefitInKind.label.29 = Car fuel
 BenefitInKind.desc.29 = This is the car fuel supplied by the employer for private journeys (including work to home commuting).
 BenefitInKind.url.29 = <a target = "_blank" href = "https://www.gov.uk/paying-your-employees-expenses-and-benefits-through-your-payroll#car-fuel">more</a> (opens in new window)
-BenefitInKind.p11d.29.ref = Section F
+BenefitInKind.p11d.29.ref =
 
 BenefitInKind.label.35 = Vans
 BenefitInKind.desc.35 = The cost of vans used privately by employees.
 BenefitInKind.url.35 = <a target = "_blank" href = "https://www.gov.uk/paying-your-employees-expenses-and-benefits-through-your-payroll#vans">more</a> (opens in new window)
-BenefitInKind.p11d.35.ref = Section G
+BenefitInKind.p11d.35.ref =
 
 BenefitInKind.label.36 = Van fuel
 BenefitInKind.desc.36 = Fuel supplied for company vans.
 BenefitInKind.url.36 = <a target = "_blank" href = "https://www.gov.uk/paying-your-employees-expenses-and-benefits-through-your-payroll#van-fuel">more</a> (opens in new window)
-BenefitInKind.p11d.36.ref = Section G
+BenefitInKind.p11d.36.ref =
 
 BenefitInKind.label.37 = Interest-free and low interest loans
 BenefitInKind.desc.37 = Loans provided to an employee either interest free or below the official rate of interest.
 BenefitInKind.url.37 = <a target = "_blank" href = "https://www.gov.uk/paying-your-employees-expenses-and-benefits-through-your-payroll#loans">more</a> (opens in new window)
-BenefitInKind.p11d.37.ref = Section H
+BenefitInKind.p11d.37.ref =
 
 BenefitInKind.label.30 = Private medical treatment or insurance
 BenefitInKind.desc.30 = The cost of private medical and dental treatment and private health insurance premiums.
 BenefitInKind.url.30 = <a target = "_blank" href = "https://www.gov.uk/expenses-and-benefits-medical-treatment">Private medical guidance</a> (opens in new window)
-BenefitInKind.p11d.30.ref = Section I
+BenefitInKind.p11d.30.ref =
 
 BenefitInKind.label.50 = Qualifying relocation expenses, payments and benefits
 BenefitInKind.desc.50 = Relocation expenses in excess of £8,000.
 BenefitInKind.url.50 = <a target = "_blank" href = "https://www.gov.uk/paying-your-employees-expenses-and-benefits-through-your-payroll#qualifying-expenses">more</a> (opens in new window)
-BenefitInKind.p11d.50.ref = Section J
+BenefitInKind.p11d.50.ref =
 
 BenefitInKind.label.8 = Services supplied
 BenefitInKind.desc.8 = The cost of any services supplied to you.
 BenefitInKind.url.8 = <a target = "_blank" href = "https://www.gov.uk/paying-your-employees-expenses-and-benefits-through-your-payroll#services">more</a> (opens in new window)
-BenefitInKind.p11d.8.ref = Section K
+BenefitInKind.p11d.8.ref =
 
 BenefitInKind.label.39 = Assets placed at the employee’s disposal
 BenefitInKind.desc.39 = Any company asset, for example, a yacht used privately by an employee.
 BenefitInKind.url.39 = <a target = "_blank" href = "https://www.gov.uk/paying-your-employees-expenses-and-benefits-through-your-payroll#assets-placed">more</a> (opens in new window)
-BenefitInKind.p11d.39.ref = Section L
+BenefitInKind.p11d.39.ref =
 
 BenefitInKind.label.47 = Other items (including subscriptions and professional fees)
 BenefitInKind.desc.47 = P11D Section M - subscriptions and professional fees, educational assistance, expenses, childcare, non-qualifying relocation benefits and expenses payments, other benefits.
 BenefitInKind.url.47 = <a target = "_blank" href = "https://www.gov.uk/expenses-benefits-subscriptions-professional-fees">Other items guidance</a> (opens in new window)
-BenefitInKind.p11d.47.ref = Section M
+BenefitInKind.p11d.47.ref =
 BenefitInKind.hint.47 = You must payroll all items you report under this section or none, except Income Tax paid but not deducted from director’s remuneration, which is a standalone benefit.
 
 BenefitInKind.label.52 = Income Tax paid but not deducted from director’s remuneration
 BenefitInKind.desc.52 = If you pay a company director without deducting tax under PAYE, and HMRC then recovers the unpaid tax from you, this counts as a benefit.
 BenefitInKind.url.52 = <a target = "_blank" href = "https://www.gov.uk/paying-your-employees-expenses-and-benefits-through-your-payroll#income-tax">more</a> (opens in new window)
-BenefitInKind.p11d.52.ref = Section M
+BenefitInKind.p11d.52.ref =
 
 BenefitInKind.label.53 = Travelling and subsistence payments
 BenefitInKind.desc.53 = The cost of fares, hotels and meals when travelling on business.
 BenefitInKind.url.53 = <a target = "_blank" href = "https://www.gov.uk/paying-your-employees-expenses-and-benefits-through-your-payroll#travelling">more</a> (opens in new window)
-BenefitInKind.p11d.53.ref = Section N
+BenefitInKind.p11d.53.ref =
 
 BenefitInKind.label.42 = Entertainment
 BenefitInKind.desc.42 = These are the payments made for entertainment including any round sum allowance, sums reimbursed or paid to third persons and specific allowances for entertaining.
 BenefitInKind.url.42 = <a target = "_blank" href = "https://www.gov.uk/paying-your-employees-expenses-and-benefits-through-your-payroll#entertainment">more</a> (opens in new window)
-BenefitInKind.p11d.42.ref = Section N
+BenefitInKind.p11d.42.ref =
 
 BenefitInKind.label.43 = General expenses allowance for business travel
 BenefitInKind.desc.43 = Any round sum allowance provided to an employee that isn’t exclusively for entertaining.
 BenefitInKind.url.43 = <a target = "_blank" href = "https://www.gov.uk/paying-your-employees-expenses-and-benefits-through-your-payroll#entertainment">more</a> (opens in new window)
-BenefitInKind.p11d.43.ref = Section N
+BenefitInKind.p11d.43.ref =
 
 BenefitInKind.label.32 = Payments for use of home telephone
 BenefitInKind.desc.32 = The cost of the employees home telephone use.
 BenefitInKind.url.32 = <a target = "_blank" href = "https://www.gov.uk/paying-your-employees-expenses-and-benefits-through-your-payroll#telephone">more</a> (opens in new window)
-BenefitInKind.p11d.32.ref = Section N
+BenefitInKind.p11d.32.ref =
 
 BenefitInKind.label.45 = Non-qualifying relocation expenses
 BenefitInKind.desc.45 = Relocation costs you’ve paid on behalf of your employee.
 BenefitInKind.url.45 = <a target = "_blank" href = "https://www.gov.uk/paying-your-employees-expenses-and-benefits-through-your-payroll#non-qualifying">more</a> (opens in new window)
-BenefitInKind.p11d.45.ref = Section N
+BenefitInKind.p11d.45.ref =
 
 BenefitInKind.label.unavailable = This benefit isn’t currently available to register online.
 BenefitInKind.label.unavailable.desc = For benefits that aren’t currently available to register online, use a <a target="_blank" rel = "external" href = "https://www.gov.uk/government/publications/paye-end-of-year-expenses-and-benefits-p11d" data-journey-click="link - click:{0}:P11D to report them instead">P11D to report them instead</a> (opens in new window).
