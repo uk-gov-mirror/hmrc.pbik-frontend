@@ -103,7 +103,9 @@ class StartPageControllerAgentSpec extends FakePBIKApplication {
           status(result) mustEqual OK
           contentAsString(result) must include(cyMessages("StartPageMPBIK2.heading." + agentRequestWelsh.userType))
           contentAsString(result) must include(cyMessages("StartPageMPBIK2.p5." + agentRequestWelsh.userType))
-          contentAsString(result) must include(cyMessages("StartPageMPBIK2.inset.link.text." + agentRequestWelsh.userType))
+          contentAsString(result) must include(
+            cyMessages("StartPageMPBIK2.inset.link.text." + agentRequestWelsh.userType)
+          )
         }
       } else {
         "return OK and the correct view for a GET with Start Now Button if existent biks - English" in {
@@ -146,88 +148,6 @@ class StartPageControllerAgentSpec extends FakePBIKApplication {
           contentAsString(result) must include(cyMessages("StartPageMPBIK.heading." + agentRequestWelsh.userType))
           contentAsString(result) must include(cyMessages("StartPageMPBIK.p5." + agentRequestWelsh.userType))
           contentAsString(result) mustNot include(cyMessages("StartPageMPBIK.link." + agentRequestWelsh.userType))
-        }
-      }
-    }
-
-    ".selectYearPage" must {
-      // TODO remove as part of clean up MPBIK
-      "return OK and the correct view for a GET - when CY data exists" in {
-        when(bikListService.currentYearList(any(), any())).thenReturn(Future.successful(bikResponseWithBenefits))
-        val result = startPageController.selectYearPage.apply(agentRequest)
-
-        if (pbikAppConfig.mpbikToggle) {
-          status(result) mustEqual NOT_FOUND
-        } else {
-          status(result) mustEqual OK
-          contentAsString(result) must include(messages("SelectYear.heading"))
-          contentAsString(result) must include(
-            messages("SelectYear.option1", controllersReferenceData.yearRange.cy.toString)
-          )
-          contentAsString(result) must include(messages("SelectYear.option2"))
-        }
-      }
-
-      "return REDIRECT and the correct view for a GET - when no CY data" in {
-        when(bikListService.currentYearList(any(), any())).thenReturn(Future.successful(bikResponseEmpty))
-        val result = startPageController.selectYearPage.apply(agentRequest)
-
-        if (pbikAppConfig.mpbikToggle) {
-          status(result) mustEqual NOT_FOUND
-        } else {
-          status(result) mustEqual SEE_OTHER
-          redirectLocation(result) mustBe Some(routes.HomePageController.onPageLoadCY1.url)
-        }
-      }
-    }
-
-    ".submitSelectYearPage" must {
-      // TODO remove as part of clean up MPBIK
-      "return OK and the correct view with error for a POST - when invalid form submit" in {
-        val result = startPageController.submitSelectYearPage.apply(agentRequest)
-
-        if (pbikAppConfig.mpbikToggle) {
-          status(result) mustEqual NOT_FOUND
-        } else {
-          status(result) mustEqual BAD_REQUEST
-          contentAsString(result) must include(messages("Service.errorSummary.heading"))
-          contentAsString(result) must include(
-            messages("SelectYear.error.empty", controllersReferenceData.yearRange.cy.toString)
-          )
-        }
-      }
-
-      "return REDIRECT and the correct view for a POST - when CY" in {
-        val result = startPageController.submitSelectYearPage.apply(agentRequestWithCYForm)
-
-        if (pbikAppConfig.mpbikToggle) {
-          status(result) mustEqual NOT_FOUND
-        } else {
-          status(result) mustEqual SEE_OTHER
-          redirectLocation(result) mustBe Some(routes.HomePageController.onPageLoadCY.url)
-        }
-      }
-
-      "return REDIRECT and the correct view for a POST - when CYP1" in {
-        val result = startPageController.submitSelectYearPage.apply(agentRequestWithCY1Form)
-
-        if (pbikAppConfig.mpbikToggle) {
-          status(result) mustEqual NOT_FOUND
-        } else {
-          status(result) mustEqual SEE_OTHER
-          redirectLocation(result) mustBe Some(routes.HomePageController.onPageLoadCY1.url)
-        }
-      }
-
-      "return exception for a POST - when invalid tax year" in {
-        if (pbikAppConfig.mpbikToggle) {
-          val result = startPageController.submitSelectYearPage.apply(agentRequestWithInvalidForm)
-
-          status(result) mustEqual NOT_FOUND
-        } else {
-          intercept[InvalidYearURIException] {
-            await(startPageController.submitSelectYearPage.apply(agentRequestWithInvalidForm))
-          }
         }
       }
     }

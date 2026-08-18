@@ -23,14 +23,14 @@ import views.html.{StartPageMpbik, StartPageMpbik2}
 
 class StartPageMPBIKViewSpec extends PBIKViewSpec {
 
-  val startPageView: StartPageMpbik = injected[StartPageMpbik]
+  val startPageView: StartPageMpbik        = injected[StartPageMpbik]
   val startPageMPBIK2View: StartPageMpbik2 = injected[StartPageMpbik2]
 
-  def view()(implicit request: AuthenticatedRequest[?]): Html = startPageView(true)
+  def view()(implicit request: AuthenticatedRequest[?]): Html       = startPageView(true)
   def viewPhase2()(implicit request: AuthenticatedRequest[?]): Html = startPageMPBIK2View()
 
   "startPage - organisation" must {
-    if(mpbikPhase2Toggle) {
+    if (mpbikPhase2Toggle) {
       implicit val html: Html = viewPhase2()(organisationRequest)
 
       behave like pageWithTitle(messages(s"StartPageMPBIK2.heading.${organisationRequest.userType}"))
@@ -52,7 +52,7 @@ class StartPageMPBIKViewSpec extends PBIKViewSpec {
   }
 
   "startPage - agent" must {
-    if(mpbikPhase2Toggle) {
+    if (mpbikPhase2Toggle) {
       implicit val html: Html = view()(agentRequest)
 
       behave like pageWithTitle(messages(s"StartPageMPBIK2.heading.${agentRequest.userType}"))

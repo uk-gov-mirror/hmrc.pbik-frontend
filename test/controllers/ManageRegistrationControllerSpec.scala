@@ -119,12 +119,12 @@ class ManageRegistrationControllerSpec extends FakePBIKApplication {
         val title  = messages("AddBenefits.Heading")
         val result = registrationController.nextTaxYearAddOnPageLoad()(mockRequest)
 
-        if (pbikAppConfig.mpbikToggle) {
-          status(result) mustBe NOT_FOUND
-        } else {
+        if (pbikAppConfig.mpbikTogglePhase2) {
           status(result) mustBe OK
           contentAsString(result) must include(title)
           contentAsString(result) must include(messages(s"BenefitInKind.label.${IabdType.EmployerProvidedServices.id}"))
+        } else {
+          status(result) mustBe NOT_FOUND
         }
       }
     }

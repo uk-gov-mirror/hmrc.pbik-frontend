@@ -66,19 +66,20 @@ class ManageRegistrationController @Inject() (
     with Logging
     with WithUrlEncodedOnlyFormBinding {
 
-  private val mpbikToggle: Boolean = pbikAppConfig.mpbikToggle
+  private val mpbikToggle: Boolean       = pbikAppConfig.mpbikToggle
+  private val mpbikPhase2Toggle: Boolean = pbikAppConfig.mpbikTogglePhase2
 
   def nextTaxYearAddOnPageLoad: Action[AnyContent] =
     (authenticate andThen noSessionCheck).async { implicit request =>
       val staticDataRequest =
-        if (mpbikToggle) {
-          Future.failed(new InvalidURIException())
-        } else {
+        if (mpbikPhase2Toggle) {
           registrationService.generateViewForBikRegistrationSelection(
             controllersReferenceData.yearRange.cy,
             generateViewBasedOnFormItems =
               nextTaxYearView(_, additive = true, controllersReferenceData.yearRange, _, _, _)
           )
+        } else {
+          Future.failed(new InvalidURIException())
         }
       controllersReferenceData.responseErrorHandler(staticDataRequest)
     }
@@ -229,7 +230,7 @@ class ManageRegistrationController @Inject() (
         )
       )
     )
-  } // todo, check if we can reach this function with the mpbik flag on
+  }
 
   def showConfirmRemoveNextTaxYear(iabdType: IabdType): Action[AnyContent] =
     (authenticate andThen noSessionCheck).async { implicit request =>
