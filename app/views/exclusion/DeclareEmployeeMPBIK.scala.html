@@ -32,7 +32,7 @@
         employee: TracePersonResponse
 )(implicit request: AuthenticatedRequest[?], messages: Messages)
 
-@expenseOrBenefit = @{messages(s"BenefitInKind.label.${iabdType.id}")}
+@expenseOrBenefit = @{messages(s"BenefitInKindMPBIK2.label.${iabdType.id}")}
 @govukLayoutWrapper(PageTitle(messages("ExclusionSearchMPBIK.title.single"))) {
 
     <h1 id="title" class="govuk-heading-xl">
@@ -51,7 +51,11 @@
 
     <h2 class="govuk-heading-m">@expenseOrBenefit</h2>
 
-    <p class="govuk-body">@messages("ExclusionImportantMPBIK.Reminder", expenseOrBenefit, taxDateUtils.getDisplayTodayDate())</p>
+    @if(year == FormMappingsConstants.CY){
+        <p class="govuk-body">@messages("ExclusionImportantMPBIK.Reminder.CY", expenseOrBenefit, taxDateUtils.getDisplayTodayDate())</p>
+    } else {
+        <p class="govuk-body">@messages("ExclusionImportantMPBIK.Reminder.CYP1", expenseOrBenefit, s"${taxYearRange.cy}")</p>
+    }
 
     <dl class="govuk-summary-list">
         <div class="govuk-summary-list__row">
@@ -68,10 +72,12 @@
         </div>
     </dl>
 
-    @govukWarningText(WarningText(
-        iconFallbackText = Some(messages("site.warning")),
-        content = Text(messages("ExclusionSearchMPBIK.warning"))
-    ))
+    @if(year == FormMappingsConstants.CY){
+        @govukWarningText(WarningText(
+            iconFallbackText = Some(messages("site.warning")),
+            content = Text(messages("ExclusionSearchMPBIK.warning"))
+        ))
+    }
 
     <p id="i-confirm-that" class="govuk-body">
         @messages("ExclusionSearchMPBIK.confirmation." + request.userType + ".p")
