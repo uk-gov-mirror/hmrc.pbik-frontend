@@ -431,6 +431,22 @@ ExclusionSearchMPBIK.understanding.agent.bullet1.cyp1 = this employee can be add
 ExclusionSearchMPBIK.understanding.agent.bullet2.cy = I don’t need to exclude employees who do not receive the benefit because there is no extra tax or Class 1A National Insurance contributions due
 ExclusionSearchMPBIK.understanding.agent.bullet2.cyp1 = I don’t need to exclude employees who do not receive the benefit because there is no extra tax or Class 1A National Insurance contributions due
 
+ExclusionRemovalConfirmationMPBIK2.title = Declare the employee you want to add back to this benefit
+
+ExclusionRemovalConfirmationMPBIK2.p.organisation = By confirming, you will start taxing this employee for {0} through your payroll from 6 April {1}.
+ExclusionRemovalConfirmationMPBIK2.bullet1.organisation = I will tax {0}''s selected benefits through payroll from 6 April {1}
+ExclusionRemovalConfirmationMPBIK2.bullet2.organisation = I will inform {0} that their tax code may change
+ExclusionRemovalConfirmationMPBIK2.bullet3.organisation = I will work out the Class 1A National Insurance contributions for the selected benefits and pay them through payroll
+ExclusionRemovalConfirmationMPBIK2.bullet4.organisation = I must add the cash equivalent to the benefit or relevant amount to {0}''s pay and tax it through payroll
+ExclusionRemovalConfirmationMPBIK2.bullet5.organisation = all other benefits offered to employees must also be taxed through payroll
+
+ExclusionRemovalConfirmationMPBIK2.p.agent = By confirming, you will start taxing this employee for {0} through your client''s payroll from 6 April {1}.
+ExclusionRemovalConfirmationMPBIK2.bullet1.agent = they must tax {0}''s selected benefits through payroll from 6 April {1}
+ExclusionRemovalConfirmationMPBIK2.bullet2.agent = they must inform {0} that their tax code may change
+ExclusionRemovalConfirmationMPBIK2.bullet3.agent = they must work out the Class 1A National Insurance contributions for the selected benefits and pay them through payroll
+ExclusionRemovalConfirmationMPBIK2.bullet4.agent = I don’t need to exclude employees who do not receive the benefit because there is no extra tax or Class 1A National Insurance contributions due
+ExclusionRemovalConfirmationMPBIK2.bullet5.agent = all other benefits offered to employees must also be taxed through payroll
+
 #*************************************************************
 # Benefits messages
 #*************************************************************
@@ -545,7 +561,6 @@ ServiceMessage.63082 = We could not match the employee details you entered with 
 ServiceMessage.63082.p.2 = You can:
 ServiceMessage.63082.try.p = check the employee’s details and
 ServiceMessage.63082.back.overview = return to your registered benefits and expenses
-
 
 ServiceMessage.63088.h1 = Benefit no longer exists
 ServiceMessage.63088.1 = This benefit no longer exists as a stand alone benefit that needs to be reported.
@@ -713,27 +728,32 @@ whatNext.add.p.agent = Benefits and expenses you have registered to tax through 
 
 whatNext.add.list.heading = Registration details
 
+whatNext.rescind.p1.intro.organisation = {0} will have {1} taxed through payroll from 6 April {2}.
+whatNext.rescind.p1.intro.agent = {0} will have {1} taxed through {2}''s payroll from 6 April {3}.
+
 whatNext.rescind.list.heading = Registration details
 
 whatNext.rescind.h2.organisation = What you must do now
-whatNext.rescind.p1.organisation = You must send a letter to {0} explaining that:
+whatNext.rescind.p1.organisation = You must write to {0} to tell them that:
 
 whatNext.rescind.h2.agent = What your client must do now
-whatNext.rescind.p1.agent = Your client must send a letter to {0} explaining that:
+whatNext.rescind.p1.agent = Your client must write to {0} to tell them that:
 
 whatNext.rescind.li1 = {0} will be taxed through payroll from 6 April {1}
-whatNext.rescind.li2 = their tax code will change
+whatNext.rescind.li2 = their tax code may change
 whatNext.rescind.li3 = they will receive a letter from HMRC with their new tax code
 
 whatNext.rescind.p2.organisation = From 6 April {0}, you must add the cash equivalent or relevant amount to {1}''s pay and tax them through your payroll.
-whatNext.rescind.p2.agent = From 6 April {0}, your client must add the cash equivalent or relevant amount to {1}''s pay and tax them through {2}''s payroll.
+whatNext.rescind.p2.agent = From 6 April {0}, your client must add the cash equivalent or relevant amount to {1}''s pay and tax them through payroll.
 
-whatNext.rescind.you.do.h3 = If you want to manage other excluded employees for this benefit or expense
+whatNext.rescind.you.do.li1 = view benefits
+whatNext.rescind.you.do.li2 = exclude employees from other benefits
+whatNext.rescind.you.do.h3 = If you want to view this benefit
 whatNext.rescind.more.p.before = You can
 whatNext.rescind.more.p.link = return to {0}
 whatNext.rescind.more.p.after = to:
-whatNext.rescind.more.li1 = exclude another employee from this benefit or expense
-whatNext.rescind.more.li2 = add an employee back to this benefit or expense
+whatNext.rescind.more.li1 = exclude an employee from this benefit
+whatNext.rescind.more.li2 = add an employee back to this benefit
 
 whatNext.exclude.heading = Exclusion complete
 whatNext.exclude.table.heading = Exclusion details
@@ -801,7 +821,6 @@ whatNext.exclude.you.do.p.cy.after.agent = to exclude employees from this year�
 whatNextMPBIK.exclude.you.do.p.cy.before.agent = You can
 whatNextMPBIK.exclude.you.do.p.cy.link.agent = return to your client’s payrolling summary
 whatNextMPBIK.exclude.you.do.p.cy.after.agent = to:
-
 
 whatNext.exclude.you.do.p.before.organisation = You can
 whatNext.exclude.you.do.p.link.organisation = return to your registered benefits and expenses
