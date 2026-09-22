@@ -431,6 +431,22 @@ ExclusionSearchMPBIK.understanding.agent.bullet1.cyp1 = bod modd ychwanegu’r c
 ExclusionSearchMPBIK.understanding.agent.bullet2.cy = Nid oes angen i fi eithrio cyflogeion nad ydynt yn cael y buddiant dan sylw oherwydd nid oes unrhyw dreth na chyfraniadau Yswiriant Gwladol Dosbarth 1A ychwanegol yn ddyledus
 ExclusionSearchMPBIK.understanding.agent.bullet2.cyp1 = Nid oes angen i fi eithrio cyflogeion nad ydynt yn cael y buddiant dan sylw oherwydd nid oes unrhyw dreth na chyfraniadau Yswiriant Gwladol Dosbarth 1A ychwanegol yn ddyledus
 
+ExclusionRemovalConfirmationMPBIK2.title = Datgan y cyflogai rydych am ei ychwanegu’n ôl at y buddiant hwn
+
+ExclusionRemovalConfirmationMPBIK2.p.organisation = By confirming, you will start taxing this employee for {0} through your payroll from 6 April {1}.
+ExclusionRemovalConfirmationMPBIK2.bullet1.organisation = I will tax {0}''s selected benefits through payroll from 6 April {1}
+ExclusionRemovalConfirmationMPBIK2.bullet2.organisation = I will inform {0} that their tax code may change
+ExclusionRemovalConfirmationMPBIK2.bullet3.organisation = I will work out the Class 1A National Insurance contributions for the selected benefits and pay them through payroll
+ExclusionRemovalConfirmationMPBIK2.bullet4.organisation = I must add the cash equivalent to the benefit or relevant amount to {0}''s pay and tax it through payroll
+ExclusionRemovalConfirmationMPBIK2.bullet5.organisation = all other benefits offered to employees must also be taxed through payroll
+
+ExclusionRemovalConfirmationMPBIK2.p.agent = Drwy gadarnhau hyn, byddwch yn dechrau trethubuddiant {0} y cyflogai drwy gyflogres eich cleient o 6 Ebrill {1}.
+ExclusionRemovalConfirmationMPBIK2.bullet1.agent = bod yn rhaid iddo drethu buddiannau a ddewiswyd {0} drwy’r gyflogres o 6 Ebrill {1}
+ExclusionRemovalConfirmationMPBIK2.bullet2.agent = bod yn rhaid iddo hysbysu {0} y gallai eu cod treth newid
+ExclusionRemovalConfirmationMPBIK2.bullet3.agent = bod yn rhaid iddo gyfrifo’r cyfraniadau Yswiriant Gwladol Dosbarth 1A ar gyfer y buddiannau a ddewiswyd a’u talu drwy’r gyflogres
+ExclusionRemovalConfirmationMPBIK2.bullet4.agent = Nid oes angen i fi eithrio cyflogeion nad ydynt yn cael y buddiant dan sylw oherwydd nid oes unrhyw dreth na chyfraniadau Yswiriant Gwladol Dosbarth 1A ychwanegol yn ddyledus
+ExclusionRemovalConfirmationMPBIK2.bullet5.agent = bod yn rhaid trethu pob buddiant arall a gynigir i gyflogeion drwy’r gyflogres hefyd
+
 #*************************************************************
 # Benefits Messages
 #*************************************************************
@@ -712,27 +728,32 @@ whatNext.add.p.agent = Buddiannau a threuliau rydych wedi eu cofrestru i’w tre
 
 whatNext.add.list.heading = Manylion cofrestru
 
+whatNext.rescind.p1.intro.organisation = {0} will have {1} taxed through payroll from 6 April {2}.
+whatNext.rescind.p1.intro.agent = Bydd buddiant {1} {0} yn cael ei drethu drwy gyflogres {2}''s o 6 Ebrill {3}.
+
 whatNext.rescind.list.heading = Manylion cofrestru
 
 whatNext.rescind.h2.organisation = Yr hyn y mae’n rhaid i chi ei wneud nawr
-whatNext.rescind.p1.organisation = Mae’n rhaid i chi anfon llythyr i {0} yn egluro’r canlynol:
+whatNext.rescind.p1.organisation = You must write to {0} to tell them that:
 
 whatNext.rescind.h2.agent = Yr hyn y mae’n rhaid i’ch cleient ei wneud nawr
-whatNext.rescind.p1.agent = Mae’n rhaid ‘ch cleient anfon llythyr i {0} yn egluro’r canlynol:
+whatNext.rescind.p1.agent = Mae’n rhaid i’ch cleient ysgrifennu at {0} i’w hysbysu am y canlynol:
 
 whatNext.rescind.li1 = bydd {0} yn cael eu trethu drwy’r gyflogres o 6 Ebrill {1} ymlaen
-whatNext.rescind.li2 = bydd ei god treth yn newid
+whatNext.rescind.li2 = efallai y bydd eu cod treth yn newid
 whatNext.rescind.li3 = bydd yn cael llythyr gan CThEF gyda’i god treth newydd
 
 whatNext.rescind.p2.organisation = O 6 Ebrill {0} ymlaen, mae angen i chi ychwanegu’r cyfwerth mewn arian parod neu’r swm perthnasol at gyflog {1} a’u trethu drwy’ch cyflogres.
-whatNext.rescind.p2.agent = O 6 Ebrill {0} ymlaen, mae angen i’ch cleient ychwanegu’r cyfwerth mewn arian parod neu’r swm perthnasol at gyflog {1} a’u trethu drwy gyflogres {2}.
+whatNext.rescind.p2.agent = O 6 Ebrill {0} ymlaen, bydd yn rhaid i’ch cleient ychwanegu’r cyfwerth mewn arian parod neu’r swm perthnasol at gyflog {1} a’u trethu drwy’r gyflogres.
 
-whatNext.rescind.you.do.h3 = Os ydych am reoli cyflogeion eraill sydd wedi’u heithrio ar gyfer y buddiant neu’r draul sydd dan sylw
+whatNext.rescind.you.do.li1 = gweld buddiannau
+whatNext.rescind.you.do.li2 = eithrio cyflogeion rhag buddiannau eraill
+whatNext.rescind.you.do.h3 = Os ydych am weld y buddiant hwn
 whatNext.rescind.more.p.before = Gallwch
 whatNext.rescind.more.p.link = fynd yn ôl i {0}
 whatNext.rescind.more.p.after = er mwyn:
-whatNext.rescind.more.li1 = eithrio cyflogai arall rhag y buddiant neu’r draul sydd dan sylw
-whatNext.rescind.more.li2 = ychwanegu cyflogai’n ôl at y buddiant neu’r draul sydd dan sylw
+whatNext.rescind.more.li1 = eithrio cyflogai o’r buddiant hwn
+whatNext.rescind.more.li2 = ychwanegu cyflogai yn ôl at y buddiant hwn
 
 whatNext.exclude.heading = Eithriad wedi’i gyflawni
 whatNext.exclude.table.heading = Manylion yr eithriad
@@ -927,7 +948,6 @@ whatNextMPBIK2.remove.h2 = Yr hyn sy’n digwydd nesaf
 ServiceMPBIK2.field.selected.benefits = Buddiannau a ddewiswyd
 ServiceMPBIK2.field.removed.benefit = Buddiant wedi’i dynnu
 
-ServiceMPBIK2.field.selected.benefits = Buddiannau a ddewiswyd
 whatYouNeedToKnowMPBIK2.subHeading.after.li1 = adio’r cyfwerth mewn arian parod neu’r swm perthnasol at gyflog y cyflogeion
 whatYouNeedToKnowMPBIK2.subHeading.after.li2 = trethu’r buddiannau drwy’r gyflogres
 whatYouNeedToKnowMPBIK2.subHeading.after.li3 = cyfrifo’r cyfraniadau Yswiriant Gwladol Dosbarth 1A ar gyfer y buddiannau a ddewiswyd a’u talu drwy’r gyflogres

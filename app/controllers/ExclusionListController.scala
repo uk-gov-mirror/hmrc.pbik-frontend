@@ -40,6 +40,7 @@ import utils.Exceptions.{InvalidBikTypeException, InvalidURIException}
 import utils.*
 import views.html.ErrorPage
 import views.html.exclusion.*
+import views.html.registration.AddBenefitConfirmationNextTaxYear
 
 import javax.inject.{Inject, Singleton}
 import scala.concurrent.{ExecutionContext, Future}
@@ -78,8 +79,9 @@ class ExclusionListController @Inject() (
     with Logging
     with WithUrlEncodedOnlyFormBinding {
 
-  val exclusionsAllowed: Boolean   = pbikAppConfig.exclusionsAllowed
-  private val mpbikToggle: Boolean = pbikAppConfig.mpbikToggle
+  val exclusionsAllowed: Boolean         = pbikAppConfig.exclusionsAllowed
+  private val mpbikToggle: Boolean       = pbikAppConfig.mpbikToggle
+  private val mpbikTogglePhase2: Boolean = pbikAppConfig.mpbikTogglePhase2
 
   def performPageLoad(isCurrentTaxYear: String, iabdType: IabdType): Action[AnyContent] =
     (authenticate andThen noSessionCheck).async { implicit request =>
@@ -188,25 +190,14 @@ class ExclusionListController @Inject() (
             Future(currentYearEIL.exclusions.map(person => (person, false)))
         _                    <- sessionService.storeCurrentExclusions(currentYearEIL)
       } yield Ok(
-        if (mpbikToggle) {
-          exclusionOverviewMPBIKView(
-            controllersReferenceData.yearRange,
-            isCurrentTaxYear,
-            iabdType,
-            isExcludedNextYear.sortBy(_._1.surname),
-            pbikAppConfig.maximumExclusions,
-            form
-          )
-        } else {
-          exclusionOverviewView(
-            controllersReferenceData.yearRange,
-            isCurrentTaxYear,
-            iabdType,
-            isExcludedNextYear.sortWith(_._1.surname < _._1.surname),
-            isRegisteredNextYear,
-            form
-          )
-        }
+        exclusionOverviewMPBIKView(
+          controllersReferenceData.yearRange,
+          isCurrentTaxYear,
+          iabdType,
+          isExcludedNextYear.sortBy(_._1.surname),
+          pbikAppConfig.maximumExclusions,
+          form
+        )
       )
 
     } else {
@@ -511,27 +502,14 @@ class ExclusionListController @Inject() (
           )
         }
       case matches =>
-        if (mpbikToggle) {
-          if (matches == 1) {
-            Redirect(
-              routes.ExclusionListController
-                .declareEmployeeToExclude(isCurrentTaxYear, iabdType)
-            )
-          } else {
-            Ok(
-              searchResultsMPBIKView(
-                controllersReferenceData.yearRange,
-                isCurrentTaxYear,
-                iabdType,
-                uniqueListOfMatches,
-                formMappings.individualSelectionForm,
-                formType
-              )
-            )
-          }
+        if (matches == 1) {
+          Redirect(
+            routes.ExclusionListController
+              .declareEmployeeToExclude(isCurrentTaxYear, iabdType)
+          )
         } else {
           Ok(
-            searchResultsView(
+            searchResultsMPBIKView(
               controllersReferenceData.yearRange,
               isCurrentTaxYear,
               iabdType,
@@ -552,33 +530,18 @@ class ExclusionListController @Inject() (
             .bindFromRequest()
             .fold(
               formWithErrors =>
-                if (mpbikToggle) {
-                  Future.successful(
-                    BadRequest(
-                      searchResultsMPBIKView(
-                        controllersReferenceData.yearRange,
-                        year,
-                        iabdType,
-                        session.get.listOfMatches.get.pbikExclusionList,
-                        formWithErrors,
-                        formType
-                      )
+                Future.successful(
+                  BadRequest(
+                    searchResultsMPBIKView(
+                      controllersReferenceData.yearRange,
+                      year,
+                      iabdType,
+                      session.get.listOfMatches.get.pbikExclusionList,
+                      formWithErrors,
+                      formType
                     )
                   )
-                } else {
-                  Future.successful(
-                    BadRequest(
-                      searchResultsView(
-                        controllersReferenceData.yearRange,
-                        year,
-                        iabdType,
-                        session.get.listOfMatches.get.pbikExclusionList,
-                        formWithErrors,
-                        formType
-                      )
-                    )
-                  )
-                },
+                ),
               values => {
                 val individualsDetails: Option[TracePersonResponse] =
                   session.get.listOfMatches.get.pbikExclusionList
@@ -587,8 +550,7 @@ class ExclusionListController @Inject() (
                   sessionService
                     .storeListOfMatches(
                       session.get.listOfMatches.get.copy(
-                        pbikExclusionList =
-                          List(individualsDetails.get) // this creates a list of just the selected employee
+                        pbikExclusionList = List(individualsDetails.get)
                       )
                     )
                     .map(_ =>
@@ -789,23 +751,13 @@ class ExclusionListController @Inject() (
         session <- sessionService.fetchPbikSession()
       } yield {
         val view =
-          if (mpbikToggle) {
-            whatNextExclusionMpbikView(
-              taxDateUtils.getTaxYearRange(),
-              year,
-              iabdType,
-              session.get.listOfMatches.get.pbikExclusionList.head,
-              mpbik = mpbikToggle
-            )
-          } else {
-            whatNextExclusionView(
-              taxDateUtils.getTaxYearRange(),
-              year,
-              iabdType,
-              session.get.listOfMatches.get.pbikExclusionList.head,
-              mpbik = mpbikToggle
-            )
-          }
+          whatNextExclusionMpbikView(
+            taxDateUtils.getTaxYearRange(),
+            year,
+            iabdType,
+            session.get.listOfMatches.get.pbikExclusionList.head,
+            mpbik = mpbikToggle
+          )
         Ok(view)
       }
       controllersReferenceData.responseErrorHandler(resultFuture)
@@ -816,9 +768,7 @@ class ExclusionListController @Inject() (
       implicit val hc: HeaderCarrier = HeaderCarrierConverter.fromRequestAndSession(request, request.session)
       if (exclusionsAllowed) {
         val resultFuture =
-          if (mpbikToggle) {
-            Future.failed(new InvalidURIException())
-          } else {
+          if (mpbikTogglePhase2) {
             sessionService.fetchPbikSession().flatMap { session =>
               val employerOptimisticLock: Int                 = session.get.currentExclusions.get.currentEmployerOptimisticLock
               val currentExclusions: Seq[PbikExclusionPerson] =
@@ -832,6 +782,8 @@ class ExclusionListController @Inject() (
                   Redirect(routes.ExclusionListController.showRemovalConfirmation(year, iabdType))
                 }
             }
+          } else {
+            Future.failed(new InvalidURIException())
           }
         controllersReferenceData.responseErrorHandler(resultFuture)
       } else {
@@ -850,9 +802,7 @@ class ExclusionListController @Inject() (
   def showRemovalConfirmation(year: String, iabdType: IabdType): Action[AnyContent] =
     (authenticate andThen noSessionCheck).async { implicit request =>
       val futureResult =
-        if (mpbikToggle) {
-          Future.failed(new InvalidURIException())
-        } else {
+        if (mpbikTogglePhase2) {
           sessionService.fetchPbikSession().map { session =>
             Ok(
               removalConfirmationView(
@@ -862,6 +812,8 @@ class ExclusionListController @Inject() (
               )
             )
           }
+        } else {
+          Future.failed(new InvalidURIException())
         }
       controllersReferenceData.responseErrorHandler(futureResult)
     }
@@ -872,9 +824,7 @@ class ExclusionListController @Inject() (
       val taxYearRange               = taxDateUtils.getTaxYearRange()
       if (exclusionsAllowed) {
         val resultFuture =
-          if (mpbikToggle) {
-            Future.failed(new InvalidURIException())
-          } else {
+          if (mpbikTogglePhase2) {
             sessionService.fetchPbikSession().flatMap { session =>
               val individual            = session.get.eiLPerson.get
               val year                  = taxYearRange.cy
@@ -912,6 +862,8 @@ class ExclusionListController @Inject() (
                     )
                 }
             }
+          } else {
+            Future.failed(new InvalidURIException())
           }
         controllersReferenceData.responseErrorHandler(resultFuture)
       } else {
@@ -935,8 +887,7 @@ class ExclusionListController @Inject() (
                 taxDateUtils.getTaxYearRange(),
                 FormMappingsConstants.CYP1,
                 iabdType,
-                individual.personToExclude,
-                mpbik = mpbikToggle
+                individual.personToExclude
               )
             )
           }

@@ -31,8 +31,7 @@ class WhatNextRescindViewSpec extends PBIKViewSpec {
     taxYearRange,
     "cyp1",
     benefit,
-    exclusionPerson,
-    mpbik = mpbikToggle
+    exclusionPerson
   )
 
   "whatNextRescind - organisation" must {
@@ -40,17 +39,10 @@ class WhatNextRescindViewSpec extends PBIKViewSpec {
 
     behave like pageWithTitle(messages("whatNext.rescind.heading"))
     behave like pageWithHeader(messages("whatNext.rescind.heading"))
-    if (mpbikToggle) {
-      behave like pageWithLink(
-        messages("whatNext.exclude.you.do.p.link." + organisationRequest.userType),
-        "/payrollbik/registered-benefits-expenses"
-      )
-    } else {
-      behave like pageWithLink(
-        messages("whatNext.exclude.you.do.p.link." + organisationRequest.userType),
-        "/payrollbik/cy1/registered-benefits-expenses"
-      )
-    }
+    behave like pageWithLink(
+      messages("whatNextMPBIK.exclude.you.do.p.cy.link." + organisationRequest.userType),
+      "/payrollbik/registered-benefits-expenses"
+    )
     behave like pageWithLink(
       messages("whatNext.exclude.more.p.link", "Car fuel"),
       s"/payrollbik/cyp1/${benefit.id}/excluded-employees"
@@ -62,17 +54,10 @@ class WhatNextRescindViewSpec extends PBIKViewSpec {
 
     behave like pageWithTitle(messages("whatNext.rescind.heading"))
     behave like pageWithHeader(messages("whatNext.rescind.heading"))
-    if (mpbikToggle) {
-      behave like pageWithLink(
-        messages("whatNext.exclude.you.do.p.link." + agentRequest.userType),
-        "/payrollbik/registered-benefits-expenses"
-      )
-    } else {
-      behave like pageWithLink(
-        messages("whatNext.exclude.you.do.p.link." + agentRequest.userType),
-        "/payrollbik/cy1/registered-benefits-expenses"
-      )
-    }
+    behave like pageWithLink(
+      messages("whatNextMPBIK.exclude.you.do.p.cy.link." + agentRequest.userType),
+      "/payrollbik/registered-benefits-expenses"
+    )
     behave like pageWithLink(
       messages("whatNext.exclude.more.p.link", "Car fuel"),
       s"/payrollbik/cyp1/${benefit.id}/excluded-employees"

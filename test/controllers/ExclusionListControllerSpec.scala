@@ -904,11 +904,11 @@ class ExclusionListControllerSpec extends FakePBIKApplication {
         val nino   = pbikSession.currentExclusions.get.exclusions.head.nationalInsuranceNumber
         val result = mockExclusionListController.remove(cyp1, iabdType, nino)(mockRequest)
 
-        if (pbikAppConfig.mpbikToggle) {
-          status(result) mustBe NOT_FOUND
-        } else {
+        if (pbikAppConfig.mpbikTogglePhase2) {
           status(result) mustBe SEE_OTHER
           redirectLocation(result) mustBe Some(s"/payrollbik/$cyp1/${iabdType.id}/check-employee-details")
+        } else {
+          status(result) mustBe NOT_FOUND
         }
       }
 
@@ -929,16 +929,16 @@ class ExclusionListControllerSpec extends FakePBIKApplication {
 
         val result = mockExclusionListController.showRemovalConfirmation(cyp1, iabdType)(mockRequest)
 
-        if (pbikAppConfig.mpbikToggle) {
-          status(result) mustBe NOT_FOUND
-        } else {
+        if (pbikAppConfig.mpbikTogglePhase2) {
           status(result) mustBe OK
           contentAsString(result) must include(
-            s"By confirming, ${pbikSession.eiLPerson.get.personToExclude.firstForename} ${pbikSession.eiLPerson.get.personToExclude.surname} will have Car and car fuel taxed through payroll from 6 April"
+            s"By confirming, you will start taxing this employee for Car and car fuel through your payroll from 6 April"
           )
           contentAsString(result) must include(
             s"${pbikSession.eiLPerson.get.personToExclude.firstForename} ${pbikSession.eiLPerson.get.personToExclude.surname}"
           )
+        } else {
+          status(result) mustBe NOT_FOUND
         }
       }
 
@@ -971,11 +971,11 @@ class ExclusionListControllerSpec extends FakePBIKApplication {
 
         val result = mockExclusionListController.removeExclusionsCommit(iabdType)(mockRequest)
 
-        if (pbikAppConfig.mpbikToggle) {
-          status(result) mustBe NOT_FOUND
-        } else {
+        if (pbikAppConfig.mpbikTogglePhase2) {
           status(result) mustBe SEE_OTHER
           redirectLocation(result) mustBe Some(s"/payrollbik/${iabdType.id}/employee-registration-complete")
+        } else {
+          status(result) mustBe NOT_FOUND
         }
       }
 
@@ -998,11 +998,11 @@ class ExclusionListControllerSpec extends FakePBIKApplication {
         val resultForCyp1 = mockExclusionListController.removeExclusionsCommit(iabdType)(mockRequest)
         val resultForCy   = mockExclusionListController.removeExclusionsCommit(iabdType)(mockRequest)
 
-        if (pbikAppConfig.mpbikToggle) {
-          status(resultForCy) mustBe NOT_FOUND
-        } else {
+        if (pbikAppConfig.mpbikTogglePhase2) {
           status(resultForCyp1) mustBe BAD_REQUEST
           status(resultForCy) mustBe BAD_REQUEST
+        } else {
+          status(resultForCy) mustBe NOT_FOUND
         }
       }
 
@@ -1016,11 +1016,11 @@ class ExclusionListControllerSpec extends FakePBIKApplication {
 
         val result = mockExclusionListController.removeExclusionsCommit(iabdType)(mockRequest)
 
-        if (pbikAppConfig.mpbikToggle) {
-          status(result) mustBe NOT_FOUND
-        } else {
+        if (pbikAppConfig.mpbikTogglePhase2) {
           status(result) mustBe INTERNAL_SERVER_ERROR
           contentAsString(result) must include(messages("ServiceMessage.code.test.123"))
+        } else {
+          status(result) mustBe NOT_FOUND
         }
       }
     }

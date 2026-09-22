@@ -25,8 +25,7 @@
         taxYearRange: TaxYearRange,
         year: String,
         iabdType: IabdType,
-        person: PbikExclusionPerson,
-        mpbik: Boolean
+        person: PbikExclusionPerson
 )(implicit request:AuthenticatedRequest[?], messages: Messages)
 
 @benefitLabel = @{ messages("BenefitInKindMPBIK2.label." + iabdType.id) }
@@ -49,9 +48,15 @@ showECLBackLink = request.showECLBackLink) {
 
     @printLink(messages("Service.print.link"))
 
-    <p class="govuk-body" id="confirmation-p">
-        @messages("ExclusionRemoval.WhatNext.p1", person.fullName, messages("BenefitInKindMPBIK2.label." + iabdType.id), s"${taxYearRange.cy}")
-    </p>
+    @if(request.isAgent) {
+        <p class="govuk-body" id="confirmation-p">
+            @messages("whatNext.rescind.p1.intro.agent", person.fullName, messages("BenefitInKindMPBIK2.label." + iabdType.id), s"${request.clientName.get}", s"${taxYearRange.cy}")
+        </p>
+    } else {
+        <p class="govuk-body" id="confirmation-p">
+            @messages("whatNext.rescind.p1.intro.organisation", person.fullName, messages("BenefitInKindMPBIK2.label." + iabdType.id), s"${taxYearRange.cy}")
+        </p>
+    }
 
     <h2 class="govuk-heading-m">
         @messages("whatNext.rescind.list.heading")
@@ -82,6 +87,14 @@ showECLBackLink = request.showECLBackLink) {
                 <p class="govuk-body">@person.worksPayrollNumber</p>
             </dd>
         </div>
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+                @messages("Service.field.employer.paye")
+            </dt>
+            <dd class="govuk-summary-list__value">
+                <p class="govuk-body">@request.empRef</p>
+            </dd>
+        </div>
         @if(request.isAgent) {
         <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
@@ -92,22 +105,6 @@ showECLBackLink = request.showECLBackLink) {
             </dd>
         </div>
         }
-        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-                @messages("Service.field.employer.paye")
-            </dt>
-            <dd class="govuk-summary-list__value">
-                <p class="govuk-body">@request.empRef</p>
-            </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-                @messages("Service.field.payroll.date")
-            </dt>
-            <dd class="govuk-summary-list__value">
-                <p class="govuk-body">@messages("ExclusionSearch.payroll.date", ""+taxYearRange.cy)</p>
-            </dd>
-        </div>
     </dl>
 
     <h2 class="govuk-heading-m">
@@ -139,13 +136,12 @@ showECLBackLink = request.showECLBackLink) {
 
     <p id="you-can-do-next-info" class="govuk-body">
         @messages("whatNext.exclude.you.do.p.before." + request.userType)
-        <a class="govuk-link" href="@summaryLink" id="link-back"> @messages("whatNext.exclude.you.do.p.link." + request.userType) </a>
+        <a class="govuk-link" href="@summaryLink" id="link-back"> @messages("whatNextMPBIK.exclude.you.do.p.cy.link." + request.userType) </a>
         @messages("whatNext.exclude.you.do.p.after." + request.userType)
     </p>
     <ul class="govuk-list govuk-list--bullet">
-        <li>@messages("whatNext.exclude.you.do.li1")</li>
-        <li>@messages("whatNext.exclude.you.do.li2")</li>
-        <li>@messages("whatNext.exclude.you.do.li3")</li>
+        <li>@messages("whatNext.rescind.you.do.li1")</li>
+        <li>@messages("whatNext.rescind.you.do.li2")</li>
     </ul>
 
     <h3 class="govuk-heading-s">

@@ -84,9 +84,14 @@
             <table class="govuk-table" style="width: 100%; table-layout: fixed;">
                 <thead class="govuk-table__head">
                     <tr class="govuk-table__row">
-                        <th scope="col" class="govuk-table__header">@messages("Service.field.name")</th>
-                        <th scope="col" class="govuk-table__header">@messages("Service.field.nino")</th>
-                        <th scope="col" class="govuk-table__header">@messages("Service.field.worksnumber")</th>
+                        <th scope="col" class="govuk-table__header" style="width: 35%;">@messages("Service.field.name")</th>
+                        <th scope="col" class="govuk-table__header" style="width: 25%;">@messages("Service.field.nino")</th>
+                        <th scope="col" class="govuk-table__header" style="width: 25%;">@messages("Service.field.worksnumber")</th>
+                        @if(isCurrentTaxYear=="cyp1"){
+                            <th scope="col" class="govuk-table__header" style="width: 30%;">
+                                <span class="govuk-visually-hidden">@messages("Service.action")</span>
+                            </th>
+                        }
                     </tr>
                 </thead>
                 @for( ((person, isExcludedInCYP1), index) <- currentWithNextYearDate.zipWithIndex ) {
@@ -94,6 +99,13 @@
                         <td class="govuk-table__cell" id="name-@person.nationalInsuranceNumber">@person.firstForename @person.surname</td>
                         <td class="govuk-table__cell" id="nino-@person.nationalInsuranceNumber">@person.nationalInsuranceNumber</td>
                         <td class="govuk-table__cell" id="wpn-@person.nationalInsuranceNumber">@person.worksPayrollNumber.getOrElse("")</td>
+                        @if(isCurrentTaxYear=="cyp1"){
+                            <td class="govuk-table__cell">
+                                <a class="govuk-link" id='@person.nationalInsuranceNumber-remove' href="@controllers.routes.ExclusionListController.remove(isCurrentTaxYear, iabdType, person.nationalInsuranceNumber)">
+                                    @messages("Service.removeexclusion")
+                                </a>
+                            </td>
+                        }
                     </tr>
                 }
             </table>
