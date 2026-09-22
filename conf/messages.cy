@@ -431,7 +431,7 @@ ExclusionSearchMPBIK.understanding.agent.bullet1.cyp1 = bod modd ychwanegu’r c
 ExclusionSearchMPBIK.understanding.agent.bullet2.cy = Nid oes angen i fi eithrio cyflogeion nad ydynt yn cael y buddiant dan sylw oherwydd nid oes unrhyw dreth na chyfraniadau Yswiriant Gwladol Dosbarth 1A ychwanegol yn ddyledus
 ExclusionSearchMPBIK.understanding.agent.bullet2.cyp1 = Nid oes angen i fi eithrio cyflogeion nad ydynt yn cael y buddiant dan sylw oherwydd nid oes unrhyw dreth na chyfraniadau Yswiriant Gwladol Dosbarth 1A ychwanegol yn ddyledus
 
-ExclusionRemovalConfirmationMPBIK2.title = Declare the employee you want to add back to this benefit
+ExclusionRemovalConfirmationMPBIK2.title = Datgan y cyflogai rydych am ei ychwanegu’n ôl at y buddiant hwn
 
 ExclusionRemovalConfirmationMPBIK2.p.organisation = By confirming, you will start taxing this employee for {0} through your payroll from 6 April {1}.
 ExclusionRemovalConfirmationMPBIK2.bullet1.organisation = I will tax {0}''s selected benefits through payroll from 6 April {1}
@@ -440,12 +440,12 @@ ExclusionRemovalConfirmationMPBIK2.bullet3.organisation = I will work out the Cl
 ExclusionRemovalConfirmationMPBIK2.bullet4.organisation = I must add the cash equivalent to the benefit or relevant amount to {0}''s pay and tax it through payroll
 ExclusionRemovalConfirmationMPBIK2.bullet5.organisation = all other benefits offered to employees must also be taxed through payroll
 
-ExclusionRemovalConfirmationMPBIK2.p.agent = By confirming, you will start taxing this employee for {0} through your client''s payroll from 6 April {1}.
-ExclusionRemovalConfirmationMPBIK2.bullet1.agent = they must tax {0}''s selected benefits through payroll from 6 April {1}
-ExclusionRemovalConfirmationMPBIK2.bullet2.agent = they must inform {0} that their tax code may change
-ExclusionRemovalConfirmationMPBIK2.bullet3.agent = they must work out the Class 1A National Insurance contributions for the selected benefits and pay them through payroll
-ExclusionRemovalConfirmationMPBIK2.bullet4.agent = I don’t need to exclude employees who do not receive the benefit because there is no extra tax or Class 1A National Insurance contributions due
-ExclusionRemovalConfirmationMPBIK2.bullet5.agent = all other benefits offered to employees must also be taxed through payroll
+ExclusionRemovalConfirmationMPBIK2.p.agent = Drwy gadarnhau hyn, byddwch yn dechrau trethubuddiant {0} y cyflogai drwy gyflogres eich cleient o 6 Ebrill {1}.
+ExclusionRemovalConfirmationMPBIK2.bullet1.agent = bod yn rhaid iddo drethu buddiannau a ddewiswyd {0} drwy’r gyflogres o 6 Ebrill {1}
+ExclusionRemovalConfirmationMPBIK2.bullet2.agent = bod yn rhaid iddo hysbysu {0} y gallai eu cod treth newid
+ExclusionRemovalConfirmationMPBIK2.bullet3.agent = bod yn rhaid iddo gyfrifo’r cyfraniadau Yswiriant Gwladol Dosbarth 1A ar gyfer y buddiannau a ddewiswyd a’u talu drwy’r gyflogres
+ExclusionRemovalConfirmationMPBIK2.bullet4.agent = Nid oes angen i fi eithrio cyflogeion nad ydynt yn cael y buddiant dan sylw oherwydd nid oes unrhyw dreth na chyfraniadau Yswiriant Gwladol Dosbarth 1A ychwanegol yn ddyledus
+ExclusionRemovalConfirmationMPBIK2.bullet5.agent = bod yn rhaid trethu pob buddiant arall a gynigir i gyflogeion drwy’r gyflogres hefyd
 
 #*************************************************************
 # Benefits Messages
@@ -729,7 +729,7 @@ whatNext.add.p.agent = Buddiannau a threuliau rydych wedi eu cofrestru i’w tre
 whatNext.add.list.heading = Manylion cofrestru
 
 whatNext.rescind.p1.intro.organisation = {0} will have {1} taxed through payroll from 6 April {2}.
-whatNext.rescind.p1.intro.agent = {0} will have {1} taxed through {2}''s payroll from 6 April {3}.
+whatNext.rescind.p1.intro.agent = Bydd buddiant {1} {0} yn cael ei drethu drwy gyflogres {2}''s o 6 Ebrill {3}.
 
 whatNext.rescind.list.heading = Manylion cofrestru
 
@@ -737,23 +737,23 @@ whatNext.rescind.h2.organisation = Yr hyn y mae’n rhaid i chi ei wneud nawr
 whatNext.rescind.p1.organisation = You must write to {0} to tell them that:
 
 whatNext.rescind.h2.agent = Yr hyn y mae’n rhaid i’ch cleient ei wneud nawr
-whatNext.rescind.p1.agent = Your client must write to {0} to tell them that:
+whatNext.rescind.p1.agent = Mae’n rhaid i’ch cleient ysgrifennu at {0} i’w hysbysu am y canlynol:
 
 whatNext.rescind.li1 = bydd {0} yn cael eu trethu drwy’r gyflogres o 6 Ebrill {1} ymlaen
-whatNext.rescind.li2 = their tax code may change
+whatNext.rescind.li2 = efallai y bydd eu cod treth yn newid
 whatNext.rescind.li3 = bydd yn cael llythyr gan CThEF gyda’i god treth newydd
 
 whatNext.rescind.p2.organisation = O 6 Ebrill {0} ymlaen, mae angen i chi ychwanegu’r cyfwerth mewn arian parod neu’r swm perthnasol at gyflog {1} a’u trethu drwy’ch cyflogres.
-whatNext.rescind.p2.agent = From 6 April {0}, your client must add the cash equivalent or relevant amount to {1}''s pay and tax them through payroll.
+whatNext.rescind.p2.agent = O 6 Ebrill {0} ymlaen, bydd yn rhaid i’ch cleient ychwanegu’r cyfwerth mewn arian parod neu’r swm perthnasol at gyflog {1} a’u trethu drwy’r gyflogres.
 
-whatNext.rescind.you.do.li1 = view benefits
-whatNext.rescind.you.do.li2 = exclude employees from other benefits
-whatNext.rescind.you.do.h3 = If you want to view this benefit
+whatNext.rescind.you.do.li1 = gweld buddiannau
+whatNext.rescind.you.do.li2 = eithrio cyflogeion rhag buddiannau eraill
+whatNext.rescind.you.do.h3 = Os ydych am weld y buddiant hwn
 whatNext.rescind.more.p.before = Gallwch
 whatNext.rescind.more.p.link = fynd yn ôl i {0}
 whatNext.rescind.more.p.after = er mwyn:
-whatNext.rescind.more.li1 = exclude an employee from this benefit
-whatNext.rescind.more.li2 = add an employee back to this benefit
+whatNext.rescind.more.li1 = eithrio cyflogai o’r buddiant hwn
+whatNext.rescind.more.li2 = ychwanegu cyflogai yn ôl at y buddiant hwn
 
 whatNext.exclude.heading = Eithriad wedi’i gyflawni
 whatNext.exclude.table.heading = Manylion yr eithriad
